@@ -1,0 +1,78 @@
+Jared Adamson
+Lab10
+
+PART A & B:
+
+CREATE TABLE CustomerInfo ( Cust_ID INT, first_Name VARCHAR(32), last_Name VARCHAR(32), Email VARCHAR(128), PRIMARY KEY ( Cust_ID ));
+CREATE TABLE CustomerInfo(
+Cust_ID INT,
+first_Name VARCHAR( 32 ) ,
+last_Name VARCHAR( 32 ) ,
+Email VARCHAR( 128 ) ,
+PRIMARY KEY ( Cust_ID )
+)
+
+CREATE TABLE Cust_Address ( Cust_ID INT, Home_Number INT, Street VARCHAR(256), City VARCHAR(128), ZipCode INT, State VARCHAR(32), PRIMARY KEY ( Cust_ID), FOREIGN KEY (Cust_ID) REFERENCES CustomerInfo(Cust_ID));
+CREATE TABLE Cust_Address(
+Cust_ID INT,
+Home_Number INT,
+Street VARCHAR( 256 ) ,
+City VARCHAR( 128 ) ,
+ZipCode INT,
+State VARCHAR( 32 ) ,
+PRIMARY KEY ( Cust_ID ) ,
+FOREIGN KEY ( Cust_ID ) REFERENCES CustomerInfo( Cust_ID )
+)
+
+CREATE TABLE Purchases ( Cust_ID INT, Bill_Amount DOUBLE, Purchase_Date VARCHAR(256), FOREIGN KEY (Cust_ID) REFERENCES CustomerInfo(Cust_ID));
+CREATE TABLE Purchases(
+Cust_ID INT,
+Bill_Amount DOUBLE,
+Purchase_Date VARCHAR( 256 ) ,
+FOREIGN KEY ( Cust_ID ) REFERENCES CustomerInfo( Cust_ID )
+)
+
+PART C:
+
+INSERT INTO CustomerInfo  
+          ( Cust_ID, first_Name, last_Name, Email)
+             VALUES (1000, "John", "Lewis", "JL@cpi310.com"), (1001, "Nancy", "Root", "NR@cpi310.com"),(1002,"John", "Wood","BW@cpi310.com"), (1003, "Ravi",	"Sunny","RS@cpi10.com");
+
+INSERT INTO CustomerInfo(
+Cust_ID,
+first_Name,
+last_Name,
+Email
+)
+VALUES ( 1000, "John", "Lewis", "JL@cpi310.com" ) , ( 1001, "Nancy", "Root", "NR@cpi310.com" ) , ( 1002, "John", "Wood", "BW@cpi310.com" ) , ( 1003, "Ravi", "Sunny", "RS@cpi10.com" )
+INSERT INTO Cust_Address  
+          ( Cust_ID, Home_Number, Street, City, ZipCode, State)
+             VALUES (1000, 125, "N. Mill", "Tempe", 85281, "AZ"),(1001, 456, "S. Indian BLDV", "Chandler", 85286, "AZ"),(1002, 897, "49th Street", "Atlanta", 56800, "GA"),(1003, 169, "9th Ave", "Los Angeles", 34567, "CA");
+
+INSERT INTO Cust_Address(
+Cust_ID,
+Home_Number,
+Street,
+City,
+ZipCode,
+State
+)
+VALUES ( 1000, 125, "N. Mill", "Tempe", 85281, "AZ" ) , ( 1001, 456, "S. Indian BLDV", "Chandler", 85286, "AZ" ) , ( 1002, 897, "49th Street", "Atlanta", 56800, "GA" ) , ( 1003, 169, "9th Ave", "Los Angeles", 34567, "CA" )
+
+INSERT INTO Purchases ( Cust_ID , Bill_Amount , Purchase_Date)
+            VALUES (1000, 67.90, "22/08/2014"),(1002, 190.00, "5/09/2014"),(1003, 236.78, "4/7/2013"),(1002, 756.67, "29/08/2014"),(1000, 25.12, "16/07/2014"),(1001, 245.67, "15/06/2014");
+INSERT INTO Purchases( Cust_ID, Bill_Amount, Purchase_Date ) 
+VALUES ( 1000, 67.90, "22/08/2014" ) , ( 1002, 190.00, "5/09/2014" ) , ( 1003, 236.78, "4/7/2013" ) , ( 1002, 756.67, "29/08/2014" ) , ( 1000, 25.12, "16/07/2014" ) , ( 1001, 245.67, "15/06/2014" )
+
+PART D:
+
+1. SELECT first_Name, last_Name FROM   CustomerInfo;
+
+2. SELECT Home_Number, Street, City, ZipCode, State FROM Cust_Address, CustomerInfo WHERE first_Name = "John"
+
+3. SELECT first_Name, last_Name FROM Purchases, CustomerInfo WHERE Bill_Amount > 100.00;
+
+4. SELECT SUM(Bill_Amount) FROM Purchases WHERE Cust_ID = 1002;
+
+5. SELECT Email FROM Purchases, CustomerInfo WHERE Bill_Amount>=250.00;
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+
+
+<!-- Jared Adamson - CPI 310 - Lab 15 -->
+
+<ADDRESSBOOK>
+
+<ADDRESS>
+
+    <FirstName>Jared</FirstName>
+
+    <LastName>Adamson</LastName>
+
+    <MailingAddress>1586 W University Dr Temepe AZ 85201</MailingAddress>
+
+    <Email>
+    	<Email1>jared@gmail.com</Email1>
+    </Email>
+
+</ADDRESS>
+
+
+<ADDRESS>
+
+    <FirstName>Bob</FirstName>
+
+    <LastName>Miller</LastName>
+
+    <MailingAddress>123 Southern Ave Mesa AZ 85202</MailingAddress>
+
+    <Email>
+    	<Email1>bob1@gmail.com</Email1>
+    	<Email2>bob2@gmail.com</Email2>
+    </Email>
+
+</ADDRESS>
+
+
+<ADDRESS>
+
+    <FirstName>Sam</FirstName>
+
+    <LastName>Scott</LastName>
+
+    <MailingAddress>1567 Town Road Mesa 85202</MailingAddress>
+
+    <Email>
+    	<Email1>sam1@gmail.com</Email1>
+    	<Email2>sam2@gmail.com</Email2>
+    	<Email3>sam3@gmail.com</Email3>
+    </Email>
+
+</ADDRESS>
+
+
+</ADDRESSBOOK>
